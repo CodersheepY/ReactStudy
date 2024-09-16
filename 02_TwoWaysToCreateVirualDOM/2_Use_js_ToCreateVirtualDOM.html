@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>hello_react</title>
+  </head>
+  <body>
+    <!--prepare for container-->
+    <div id="test"></div>
+    <!--load react core library-->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <!--load react-dom to render react component-->
+    <script
+      type="text/javascript"
+      src="../js/react-dom.development.js"
+    ></script>
+
+    <script type="text/javascript">
+      //1.define a react component
+      const VDOM = React.createElement(
+        "h1",
+        { id: "title" },
+        React.createElement("span", {}, "Hello React!")
+      ); /*Don't write * because it is not a string*/
+      //2.render a react component
+      ReactDOM.render(VDOM, document.getElementById("test"));
+    </script>
+  </body>
+</html>
