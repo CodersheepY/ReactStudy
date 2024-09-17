@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>1_class</title>
+  </head>
+  <body>
+    <!--prepare for container-->
+    <div id="test"></div>
+    <!--load react core library-->
+    <script t ype="text/javascript" src="../js/react.development.js"></script>
+    <!--load react-dom to render react component-->
+    <script
+      type="text/javascript"
+      src="../js/react-dom.development.js"
+    ></script>
+    <!--load babel to compile jsx-->
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+
+    <script type="text/babel">
+      //babel is a javascript compiler
+      //1.define a class component
+      class Person {
+        //constructor is a special method for creating and initializing an object created with a class
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+        speak() {
+          console.log("I am {this.name}, I am {this.age} years old");
+        }
+      }
+      // create a subclass of Person
+      class Student extends Person {
+        constructor(name, age, grade) {
+          super(name, age);
+          this.grade = grade;
+        }
+        //override the speak method
+        speak() {
+          console.log(
+            "I am {this.name}, I am {this.age} years old, I am in grade {this.grade}"
+          );
+        }
+      }
+
+      const s1 = new Student("Tom", 18, 9);
+      console.log(s1);
+      s1.speak();
+      //2.create an object of a class component
+      // const p1 = new Person("Tom", 18);
+      // const p2 = new Person("Jerry", 20);
+      // console.log(p1);
+      // console.log(p2);
+      // p1.speak();
+      // p2.speak();
+    </script>
+  </body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>jsx</title>
+    <title>1_FunctionComponents</title>
   </head>
   <body>
     <!--prepare for container-->
@@ -19,20 +19,12 @@
 
     <script type="text/babel">
       //babel is a javascript compiler
-      const data = ["React", "Vue", "Angular"];
       //1.define a react component
-      const VDOM = (
-        <div>
-          <h1>font_end js framework</h1>
-          <ul>
-            {data.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      );
+      function MyComponent() {
+        return <h2>component is used to define a react component</h2>;
+      }
       //2.render a react component
-      ReactDOM.render(VDOM, document.getElementById("test"));
+      ReactDOM.render(<MyComponent />, document.getElementById("test"));
     </script>
   </body>
 </html>
