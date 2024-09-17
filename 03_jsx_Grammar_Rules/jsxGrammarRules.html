@@ -2,7 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>VirtualDOMandTrueDOM</title>
+    <title>jsxGrammarRules</title>
+    <style>
+      h2 {
+        color: red;
+      }
+    </style>
   </head>
   <body>
     <!--prepare for container-->
@@ -19,24 +24,24 @@
 
     <script type="text/babel">
       //babel is a javascript compiler
-      //1.define a react component
-      const VDOM = (
-        <h1 id="title">
-          <span>Hello React!</span>
-        </h1>
-      ); /*Don't write * because it is not a string*/
-      //2.render a react component
-      ReactDOM.render(VDOM, document.getElementById("test"));
 
-      console.log("virtual DOM", VDOM);
-      console.log(typeof VDOM);
-      console.log(VDOM instanceof Object);
-      /*
-        About Virtual DOM:
-        1. Virtual DOM is a pure JavaScript object.
-        2. Virtual DOM is not heavy, it is lightweight.
-        3. Virtual DOM is a copy of the True DOM.
-    */
+      const myId = "Brian";
+      const myData = "Hello React!";
+      //1.define a react component
+
+      const VDOM = (
+        <div>
+          <h2 className="title" id={myId.toLowerCase()}>
+            <span>{myData.toLowerCase()}</span>
+          </h2>
+          <h2 className="title" id={myId.toLowerCase()}>
+            <span>{myData.toLowerCase()}</span>
+          </h2>
+          <input type="text" value="Hello React!" />
+        </div>
+      );
+      //2.render a virtual DOM to page
+      ReactDOM.render(VDOM, document.getElementById("test"));
     </script>
   </body>
 </html>
