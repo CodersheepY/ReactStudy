@@ -19,14 +19,15 @@
 
     <script type="text/babel">
       //babel is a javascript compiler
+      const data = ["React", "Vue", "Angular"];
       //1.define a react component
       const VDOM = (
         <div>
           <h1>font_end js framework</h1>
           <ul>
-            <li>React</li>
-            <li>Vue</li>
-            <li>Angular</li>
+            {data.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
           </ul>
         </div>
       );
