@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>2_PrimaryEvent</title>
+  </head>
+  <body>
+    <button id="btn1">button1</button>
+    <button id="btn2">button2</button>
+    <button onclick="btn3Click()">button3</button>
+
+    <script type="text/javascript">
+      const btn1 = document.getElementById("btn1");
+      btn1.addEventListener("click", () => {
+        alert("button1 clicked");
+      });
+      const btn2 = document.getElementById("btn2");
+      btn2.addEventListener("click", () => {
+        alert("button2 clicked");
+      });
+      function btn3Click() {
+        alert("button3 clicked");
+      }
+    </script>
+  </body>
+</html>
